@@ -1,10 +1,10 @@
 import axios from "axios";
 import token from "./utilities";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuIdv4 } from "uuid";
 
 const defaultHeaders = (contentType = "application/json") => {
   return {
-    "X-Request-Id": uuidv4(),
+    "X-Request-Id": uuIdv4(),
     "Content-Type": contentType,
     "Accept-Language": "es-US",
     Accept: "application/json",
