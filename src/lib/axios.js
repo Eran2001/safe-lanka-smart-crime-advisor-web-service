@@ -13,7 +13,7 @@ const defaultHeaders = (contentType = "application/json") => {
 };
 
 const clientOnboarding = axios.create({
-  baseURL: import.meta.env.VITE_E_COMM_API_BASE_URL,
+  baseURL: import.meta.env.VITE_SAFE_LANKA_API_BASE_URL,
   timeout: 30000,
 });
 
