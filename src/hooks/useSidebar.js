@@ -10,3 +10,20 @@
 // };
 
 // export default useSidebar;
+import { useState } from "react";
+
+const useSidebar = () => {
+  const [collapsed, setCollapsed] = useState(() => {
+    const stored = localStorage.getItem("sidebarCollapsed");
+    return stored ? JSON.parse(stored) : false;
+  });
+
+  const setMenuCollapsed = (val) => {
+    setCollapsed(val);
+    localStorage.setItem("sidebarCollapsed", JSON.stringify(val));
+  };
+
+  return [collapsed, setMenuCollapsed];
+};
+
+export default useSidebar;

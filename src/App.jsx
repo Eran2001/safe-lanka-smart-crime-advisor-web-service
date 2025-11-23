@@ -4,8 +4,8 @@ import { ToastContainer } from "react-toastify";
 
 import AccessExpireModal from "@/components/AccessExpireModal";
 
-import DefaultLayout from "@/layout/DefaultLayout";
-import AuthLayout from "@/layout/AuthLayout";
+import DefaultLayout from "@/layouts/DefaultLayout";
+import AuthLayout from "@/layouts/AuthLayout";
 import DashboardLayout from "@/layouts/DashboardLayout";
 
 import API from "@/services/index";
@@ -15,7 +15,7 @@ import token from "@/lib/utilities";
 const LoginPage = lazy(() => import("./pages/auth/login"));
 const RegisterPage = lazy(() => import("./pages/auth/register"));
 const ResetPassword = lazy(() => import("./pages/auth/reset-password"));
-const ForgetPassword = lazy(() => import("./pages/auth/forget-password"));
+const ForgetPassword = lazy(() => import("./pages/auth/forgot-password"));
 
 // default routes
 const HomePage = lazy(() => import("./pages/home"));
@@ -113,7 +113,9 @@ function App() {
     <main className="App relative">
       <Routes>
         {/* auth Routes */}
-        <Route path="/*" element={<AuthLayout />}>
+        <Route path="/*">
+          {" "}
+          {/* element={<AuthLayout />} */}
           <Route
             path="login"
             element={
@@ -134,10 +136,10 @@ function App() {
         {/* default Routes */}
         <Route
           path="/*"
-          element={<DefaultLayout userVerificationData={fetchVerification} />}
+          // element={<DefaultLayout userVerificationData={fetchVerification} />}
         >
           <Route
-            path="/"
+            index
             element={<HomePage userVerificationData={fetchVerification} />}
           />
         </Route>
@@ -145,7 +147,7 @@ function App() {
         {/* protected Routes */}
         <Route
           path="/*"
-          element={<DashboardLayout userVerificationData={fetchVerification} />}
+          // element={<DashboardLayout userVerificationData={fetchVerification} />}
         >
           <Route
             path="dashboard"

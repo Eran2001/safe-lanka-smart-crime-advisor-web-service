@@ -62,7 +62,13 @@ const Layout = ({ userVerificationData }) => {
           <div
             className={width > 768 ? "container mx-auto" : "container-fluid"}
           >
-            <Suspense fallback={<Loading />}>
+            <Suspense
+              fallback={
+                <div className="flex items-center justify-center min-h-[500px]">
+                  <Loading />
+                </div>
+              }
+            >
               <motion.div
                 key={location.pathname}
                 initial="pageInitial"
