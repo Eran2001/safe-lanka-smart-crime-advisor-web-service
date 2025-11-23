@@ -11,7 +11,17 @@ import DashboardLayout from "@/layouts/DashboardLayout";
 import API from "@/services/index";
 import token from "@/lib/utilities";
 
+// auth routes
 const LoginPage = lazy(() => import("./pages/auth/login"));
+const RegisterPage = lazy(() => import("./pages/auth/register"));
+const ResetPassword = lazy(() => import("./pages/auth/reset-password"));
+const ForgetPassword = lazy(() => import("./pages/auth/forget-password"));
+
+// default routes
+const HomePage = lazy(() => import("./pages/home"));
+
+// protected routes
+const Dashboard = lazy(() => import("./pages/dashboard/"));
 
 function App() {
   const navigate = useNavigate();
@@ -102,6 +112,7 @@ function App() {
   return (
     <main className="App relative">
       <Routes>
+        {/* auth Routes */}
         <Route path="/*" element={<AuthLayout />}>
           <Route
             path="login"
@@ -113,33 +124,32 @@ function App() {
             }
           />
           <Route path="register" element={<RegisterPage />} />
-          <Route path="signup" element={<SignUpPage />} />
           <Route path="forgot-password" element={<ForgetPassword />} />
-          <Route path="verify/email" element={<VerifyUser />} />
           <Route
             path="password-reset"
-            element={<NewPassword fetchVerification={fetchVerification} />}
+            element={<ResetPassword fetchVerification={fetchVerification} />}
           />
-          <Route path="logout" element={<LogoutPage />} />
         </Route>
+
+        {/* default Routes */}
         <Route
           path="/*"
           element={<DefaultLayout userVerificationData={fetchVerification} />}
         >
           <Route
-            path="ai-copilot"
-            element={<AICopilot userVerificationData={fetchVerification} />}
+            path="/"
+            element={<HomePage userVerificationData={fetchVerification} />}
           />
         </Route>
 
-        {/* Authenticated Routes */}
+        {/* protected Routes */}
         <Route
           path="/*"
           element={<DashboardLayout userVerificationData={fetchVerification} />}
         >
           <Route
-            path="ai-copilot"
-            element={<AICopilot userVerificationData={fetchVerification} />}
+            path="dashboard"
+            element={<Dashboard userVerificationData={fetchVerification} />}
           />
         </Route>
       </Routes>
