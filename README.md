@@ -1,16 +1,43 @@
-# React + Vite
+# SafeLanka – Smart Crime Advisor (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SafeLanka is a smart, AI-ready web-based decision support system designed to assist the Sri Lanka Police in analyzing and predicting crime trends and hotspots.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### JavaScript, React, Vite, TailwindCSS.
 
-## React Compiler
+## ⚙️ Architecture Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### SafeLanka follows a Three-Tier Architecture:
 
-## Expanding the ESLint configuration
+#### 1. Presentation Layer (React + Vite) – Dynamic user interface for all roles
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### 2. Business Logic Layer (Django) – Authentication, AI module integration, and secure REST APIs
+
+#### 3. Data Access Layer (MySQL) – Structured storage of crime data, predictions, and feedback
+
+## 🧩 Features
+
+#### 🔒 Role-Based Authentication (Admin / Officer / Analyst)
+
+#### 📊 Interactive Dashboards using Chart.js
+
+#### 🗺 Crime Hotspot Heatmaps (Leaflet.js)
+
+#### 📈 Predicted Crime Trends Visualization
+
+#### 💬 Feedback & Ratings System
+
+#### 📚 Blog and Help Pages (Safety, Awareness, FAQs)
+
+#### 🔔 In-App Notifications for high-risk alerts
+
+#### 📁 Downloadable Reports (CSV/PDF)
+
+## Installation
+
+Use the package manager [npm](https://www.npmjs.com/) to install SafeLanka – Smart Crime Advisor (Frontend).
+
+```bash
+npm install
+```
