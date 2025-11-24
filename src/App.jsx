@@ -19,6 +19,9 @@ const ForgetPassword = lazy(() => import("./pages/auth/forgot-password"));
 
 // default routes
 const HomePage = lazy(() => import("./pages/home"));
+const AboutPage = lazy(() => import("./pages/about"));
+const BlogPage = lazy(() => import("./pages/blog"));
+const GuidePage = lazy(() => import("./pages/guide"));
 
 // protected routes
 const AdminDashboard = lazy(() => import("./pages/dashboard/admin"));
@@ -165,11 +168,23 @@ function App() {
         {/* default Routes */}
         <Route
           path="/*"
-          // element={<DefaultLayout userVerificationData={fetchVerification} />}
+          element={<DefaultLayout userVerificationData={fetchVerification} />}
         >
           <Route
             index
             element={<HomePage userVerificationData={fetchVerification} />}
+          />
+          <Route
+            path="about"
+            element={<AboutPage userVerificationData={fetchVerification} />}
+          />
+          <Route
+            path="blog"
+            element={<BlogPage userVerificationData={fetchVerification} />}
+          />
+          <Route
+            path="guide"
+            element={<GuidePage userVerificationData={fetchVerification} />}
           />
         </Route>
 
