@@ -21,7 +21,11 @@ const ForgetPassword = lazy(() => import("./pages/auth/forgot-password"));
 const HomePage = lazy(() => import("./pages/home"));
 
 // protected routes
-const Dashboard = lazy(() => import("./pages/dashboard/"));
+const AdminDashboard = lazy(() => import("./pages/dashboard/admin"));
+const AnalystDashboard = lazy(() => import("./pages/dashboard/analyst"));
+const OfficerDashboard = lazy(() => import("./pages/dashboard/officer"));
+const ResearcherDashboard = lazy(() => import("./pages/dashboard/researcher"));
+const SupervisorDashboard = lazy(() => import("./pages/dashboard/supervisor"));
 
 function App() {
   const navigate = useNavigate();
@@ -29,11 +33,57 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const checkUserDetails = () => {
-    //
+    const path = window.location.pathname;
+    const authToken = token.getAuthToken();
+    const userData = token.getUserData();
+
+    if (!authToken || !userData) {
+      setIsAuthenticated(false);
+      setUserVerificationData(null);
+      navigate("/login");
+    } else {
+      setIsAuthenticated(true);
+      fetchVerification();
+    }
   };
 
-  const fetchVerification = () => {
-    //
+  const fetchVerification = async () => {
+    try {
+      const authToken = token.getAuthToken();
+      const userData = token.getUserData();
+
+      if (!authToken || !userData) {
+        navigate("/login");
+        return;
+      }
+
+      const response = await API.private.auth_verify();
+
+      if (response.data.code !== "OK") {
+        token.clear();
+        navigate("/login");
+        return;
+      }
+
+      switch (userData.role) {
+        case "admin":
+          navigate("/dashboard/admin");
+          break;
+
+        case "officer":
+          navigate("/dashboard/officer");
+          break;
+
+        case "analyst":
+          navigate("/dashboard/analyst");
+          break;
+
+        default:
+          navigate("/login");
+      }
+    } catch (err) {
+      navigate("/login");
+    }
   };
 
   // const checkUserDetails = () => {
@@ -112,6 +162,17 @@ function App() {
   return (
     <main className="App relative">
       <Routes>
+        {/* default Routes */}
+        <Route
+          path="/*"
+          // element={<DefaultLayout userVerificationData={fetchVerification} />}
+        >
+          <Route
+            index
+            element={<HomePage userVerificationData={fetchVerification} />}
+          />
+        </Route>
+
         {/* auth Routes */}
         <Route path="/*">
           {" "}
@@ -133,25 +194,40 @@ function App() {
           />
         </Route>
 
-        {/* default Routes */}
-        <Route
-          path="/*"
-          // element={<DefaultLayout userVerificationData={fetchVerification} />}
-        >
-          <Route
-            index
-            element={<HomePage userVerificationData={fetchVerification} />}
-          />
-        </Route>
-
         {/* protected Routes */}
         <Route
           path="/*"
           // element={<DashboardLayout userVerificationData={fetchVerification} />}
         >
           <Route
-            path="dashboard"
-            element={<Dashboard userVerificationData={fetchVerification} />}
+            path="dashboard/admin"
+            element={
+              <AdminDashboard userVerificationData={fetchVerification} />
+            }
+          />
+          <Route
+            path="dashboard/analyst"
+            element={
+              <AnalystDashboard userVerificationData={fetchVerification} />
+            }
+          />
+          <Route
+            path="dashboard/officer"
+            element={
+              <OfficerDashboard userVerificationData={fetchVerification} />
+            }
+          />
+          <Route
+            path="dashboard/researcher"
+            element={
+              <ResearcherDashboard userVerificationData={fetchVerification} />
+            }
+          />
+          <Route
+            path="dashboard/supervisor"
+            element={
+              <SupervisorDashboard userVerificationData={fetchVerification} />
+            }
           />
         </Route>
       </Routes>
