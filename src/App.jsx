@@ -210,7 +210,7 @@ function App() {
         {/* protected Routes */}
         <Route
           path="/*"
-          // element={<DashboardLayout userVerificationData={fetchVerification} />}
+          element={<DashboardLayout userVerificationData={fetchVerification} />}
         >
           <Route
             path="dashboard/admin"
