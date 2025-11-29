@@ -1,3 +1,36 @@
+// Main navigation links
+export const mainNavHome = {
+  name: "Home",
+  link: "/",
+  allowed: ["SUPER-ADMIN", "ADMIN", "POLICE-OFFICER", "ANALYST", "RESEARCHER"],
+};
+
+export const mainNavAbout = {
+  name: "About",
+  link: "/about",
+  allowed: ["SUPER-ADMIN", "ADMIN", "POLICE-OFFICER", "ANALYST", "RESEARCHER"],
+};
+
+export const mainNavBlog = {
+  name: "Blog",
+  link: "/blog",
+  allowed: ["SUPER-ADMIN", "ADMIN", "POLICE-OFFICER", "ANALYST", "RESEARCHER"],
+};
+
+export const mainNavGuide = {
+  name: "Guide",
+  link: "/guide",
+  allowed: ["SUPER-ADMIN", "ADMIN", "POLICE-OFFICER", "ANALYST", "RESEARCHER"],
+};
+
+export const mainNavItems = [
+  mainNavHome,
+  mainNavAbout,
+  mainNavBlog,
+  mainNavGuide,
+];
+
+// Sidebar navigation links - protected
 export const menuItemManageDashboard = {
   group: "",
   title: "Dashboard",

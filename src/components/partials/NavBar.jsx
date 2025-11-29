@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-
 import SecurityRoundedIcon from "@mui/icons-material/SecurityRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 
+import { mainNavItems } from "@/constant/data";
+
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,13 +18,6 @@ const NavBar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: "Features", href: "#features" },
-    { name: "About", href: "#about" },
-    { name: "Blog", href: "#blog" },
-    { name: "Help", href: "#help" },
-  ];
 
   return (
     <>
@@ -49,15 +44,15 @@ const NavBar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors relative group"
+            {mainNavItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.link}
+                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors relative group cursor-pointer"
               >
-                {link.name}
+                {item.name}
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -111,15 +106,15 @@ const NavBar = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <a
+            {mainNavItems.map((link) => (
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.link}
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 rounded-xl font-medium transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 

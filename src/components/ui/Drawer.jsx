@@ -37,7 +37,7 @@ const Drawer = ({
           leaveTo="opacity-0"
         >
           <DialogBackdrop
-            className={`fixed inset-0 backdrop-blur-sm bg-transparent${backdropOpacity}`}
+            className={`fixed inset-0 backdrop-blur-sm bg-black/40 ${backdropOpacity}`}
           />
         </TransitionChild>
 
@@ -56,8 +56,8 @@ const Drawer = ({
                 <DialogPanel
                   className={`pointer-events-auto w-screen bg-white dark:bg-gray-900 shadow-xl ${themeClass}`}
                 >
-                  <div className="flex justify-between items-center px-4 py-4 border-b border-gray-300 dark:border-gray-700">
-                    <DialogTitle className="text-lg font-semibold">
+                  <div className="flex justify-between items-center px-4 py-4">
+                    <DialogTitle className="text-lg font-semibold text-black">
                       {title}
                     </DialogTitle>
 
