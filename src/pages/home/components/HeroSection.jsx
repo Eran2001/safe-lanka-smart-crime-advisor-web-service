@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BarChart3,
   Map,
@@ -9,9 +9,16 @@ import {
   Lock,
 } from "lucide-react";
 
+import CheckBox from "@/components/ui/CheckBox";
+
 const HeroSection = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleToggle = () => {
+    setIsChecked(!isChecked);
+  };
   return (
-    <div className="bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+    <div className="bg-slate-50 dark:bg-black font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-red-50/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
@@ -27,8 +34,9 @@ const HeroSection = () => {
                 AI-Powered Policing
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-[1.15]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-white leading-[1.15]">
                 SafeLanka <br />
+                <CheckBox id="c1" value={isChecked} onChange={handleToggle} />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500">
                   Smart Crime Advisor
                 </span>

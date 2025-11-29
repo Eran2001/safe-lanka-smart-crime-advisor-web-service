@@ -1,16 +1,37 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --colors-white: #d5ddde;
+  --color-white: #fff;
   --color-muted: #a4b9cc;
   --color-primary: #09254f;
-  --color-secondary: #0a4c9c;
+  --color-secondary: #1d4ed8;
   --color-third: #5ea2d4;
-  --colors-black: #000;
+  --color-black: #000;
+  --color-success: #50c793;
+  --color-danger: #f1595c;
+  --color-warning: #fa916b;
 }
 
 @theme extend {
   --font-family-display: Poppins, sans-serif;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade 0.25s ease-in;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
 @layer components {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Shield, Menu, X, ChevronRight } from "lucide-react";
 
+import DarkModeToggle from "@/components/ui/DarkModeToggle";
+
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,9 +57,12 @@ const NavBar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <DarkModeToggle />
+
             <button className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors">
               Login
             </button>
+
             <button className="group bg-blue-700 hover:bg-blue-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-blue-700/20 transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2">
               Register Officer
               <ChevronRight

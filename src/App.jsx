@@ -163,7 +163,7 @@ function App() {
   // }, [userVerificationData]);
 
   return (
-    <main className="App relative">
+    <main className="">
       <Routes>
         {/* default Routes */}
         <Route
