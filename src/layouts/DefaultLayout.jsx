@@ -12,7 +12,7 @@ const DefaultLayout = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-black selection:bg-blue-100 selection:text-blue-900">
       <NavBar />
-      <main className="relative flex-1 container mx-auto px-4 pt-28 pb-10">
+      <main className="relative flex-1 container mx-auto pt-28 pb-10">
         <div className="absolute top-0 -right-50 w-[600px] h-[600px] dark:bg-blue-100/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
         <div className="absolute bottom-0 -left-50 -ml-20 -mb-20 w-[400px] h-[400px] dark:bg-red-50/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
         <Suspense

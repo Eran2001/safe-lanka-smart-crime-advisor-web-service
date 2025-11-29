@@ -160,7 +160,7 @@ const HeroSection = () => {
                   </div>
 
                   <div
-                    className="absolute -right-6 top-12 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-slate-100 z-30 animate-bounce"
+                    className="absolute right-0 -top-8 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-slate-100 z-30 animate-bounce"
                     style={{ animationDuration: "3s" }}
                   >
                     <div className="flex items-start gap-3">

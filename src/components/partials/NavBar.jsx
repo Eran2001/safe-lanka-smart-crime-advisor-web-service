@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 import SecurityRoundedIcon from "@mui/icons-material/SecurityRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
@@ -11,6 +11,8 @@ import { mainNavItems } from "@/constant/data";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -39,44 +41,43 @@ const NavBar = () => {
             </div>
 
             <span
-              className={`text-xl font-bold tracking-tight ${
-                isScrolled ? "text-muted-700" : "text-black"
+              className={`text-xl font-bold tracking-tight text-black dark:text-white ${
+                isScrolled ? "" : ""
               }`}
             >
-              Safe<span className="text-primary-700">Lanka</span>
+              Safe<span className="text-primary-500">Lanka</span>
             </span>
           </div>
 
           <div className="hidden md:flex items-center gap-1">
-            {mainNavItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.link}
-                className="relative px-4 py-2 text-sm font-medium 
-                  text-muted-500 hover:text-primary-700 transition group"
-              >
-                {item.name}
-
-                <span
-                  className="absolute left-4 right-4 bottom-1 h-0.5 bg-primary-700 
-                  scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                />
-              </Link>
-            ))}
+            {mainNavItems.map((item) => {
+              const isActive = location.pathname === item.link;
+              return (
+                <Link
+                  key={item.name}
+                  to={item.link}
+                  className={`relative px-4 py-2 text-sm font-medium text-black dark:text-white ${
+                    isActive ? "bg-slate-100 dark:bg-white/10" : ""
+                  } rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-500 group`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="hidden md:flex items-center gap-4">
             <DarkModeToggle />
 
-            <button className="text-muted-600 hover:text-primary-700 text-sm font-semibold transition">
+            <button className="text-black dark:text-white text-sm font-semibold transition">
               Login
             </button>
 
-            <button className="group bg-primary-500 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md shadow-primary-700/20 transition-all flex items-center gap-2 cursor-pointer">
+            <button className="group bg-primary-500 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md shadow-primary-700/20 transition-all flex items-center gap-1 cursor-pointer">
               Register Officer
               <ChevronRightRoundedIcon
-                fontSize="small"
-                className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
+                fontSize="medium"
+                className="hidden group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-500"
               />
             </button>
           </div>
