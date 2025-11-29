@@ -1,17 +1,71 @@
 @import "tailwindcss";
 
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-white: #fff;
-  --color-muted: #64748b;
-  --color-primary: #1d4ed8;
-  --color-secondary: #09254f;
-  --color-third: #5ea2d4;
-  --color-black: #000;
-  --color-success: #50c793;
-  --color-danger: #f1595c;
-  --color-warning: #fa916b;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* MUTED */
+  --color-muted-100: #f1f5f9;
+  --color-muted-200: #e2e8f0;
+  --color-muted-300: #cbd5e1;
+  --color-muted-400: #94a3b8;
+  --color-muted-500: #64748b;
+  --color-muted-700: #475569;
+
+  /* PRIMARY */
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-700: #1d4ed8;
+
+  /* SECONDARY */
+  --color-secondary-100: #d2dced;
+  --color-secondary-200: #a6b8db;
+  --color-secondary-300: #7994c8;
+  --color-secondary-400: #4d70b6;
+  --color-secondary-500: #315a9d;
+  --color-secondary-700: #09254f;
+
+  /* THIRD */
+  --color-third-100: #e0f2fc;
+  --color-third-200: #b9def6;
+  --color-third-300: #90c9ee;
+  --color-third-400: #6ab7e5;
+  --color-third-500: #45a4db;
+  --color-third-700: #5ea2d4;
+
+  /* SUCCESS */
+  --color-success-100: #dbf7eb;
+  --color-success-200: #b7efd7;
+  --color-success-300: #92e7c4;
+  --color-success-400: #6edfaf;
+  --color-success-500: #4cd799;
+  --color-success-700: #50c793;
+
+  /* DANGER */
+  --color-danger-100: #fde2e2;
+  --color-danger-200: #fbbaba;
+  --color-danger-300: #f89090;
+  --color-danger-400: #f46a6a;
+  --color-danger-500: #f04444;
+  --color-danger-700: #f1595c;
+
+  /* WARNING */
+  --color-warning-100: #fee8dc;
+  --color-warning-200: #fcc8ad;
+  --color-warning-300: #f9a67a;
+  --color-warning-400: #f88954;
+  --color-warning-500: #f76c2d;
+  --color-warning-700: #fa916b;
 }
 
 @theme extend {
