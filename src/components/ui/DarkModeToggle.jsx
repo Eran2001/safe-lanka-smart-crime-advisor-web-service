@@ -19,9 +19,10 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggle}
-      className={`w-10 h-10 rounded-full transition-all text-muted dark:text-white hover:bg-slate-200 dark:hover:bg-muted ${
-        isScrolled && isDark ? "text-muted!" : "text-blue-500"
-      } cursor-pointer`}
+      className={`w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer
+    text-muted-500 dark:text-white hover:bg-slate-200 dark:hover:bg-muted
+    ${isScrolled && isDark ? "text-muted-500!" : "text-blue-500"}
+  `}
     >
       {isDark ? (
         <LightModeRoundedIcon fontSize="small" className="animate-fade-in" />

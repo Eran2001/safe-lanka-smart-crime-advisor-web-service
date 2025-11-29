@@ -14,11 +14,8 @@ const HeroSection = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="bg-slate-50 dark:bg-black font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] dark:bg-blue-100/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] dark:bg-red-50/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
-
+      <div>
+        <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               {/* LEFT CONTENT */}
@@ -47,7 +44,7 @@ const HeroSection = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                   <button
                     onClick={() => setOpen(true)}
-                    className="w-full sm:w-auto px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white rounded-xl font-bold shadow-xl shadow-blue-700/20 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
+                    className="w-full sm:w-auto px-8 py-4 bg-primary-500 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-blue-700/20 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
                   >
                     Register Now
                     <ChevronRightRoundedIcon className="group-hover:translate-x-1 transition-transform" />
