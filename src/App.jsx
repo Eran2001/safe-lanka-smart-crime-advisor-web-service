@@ -2,8 +2,6 @@ import React, { lazy, useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import AccessExpireModal from "@/components/AccessExpireModal";
-
 import DefaultLayout from "@/layouts/DefaultLayout";
 import AuthLayout from "@/layouts/AuthLayout";
 import DashboardLayout from "@/layouts/DashboardLayout";
@@ -22,6 +20,8 @@ const HomePage = lazy(() => import("./pages/home"));
 const AboutPage = lazy(() => import("./pages/about"));
 const BlogPage = lazy(() => import("./pages/blog"));
 const GuidePage = lazy(() => import("./pages/guide"));
+const UnauthorizedPage = lazy(() => import("./pages/401"));
+const NotFoundPage = lazy(() => import("./pages/404"));
 
 // protected routes
 const AdminDashboard = lazy(() => import("./pages/dashboard/admin"));
@@ -165,6 +165,16 @@ function App() {
   return (
     <main className="">
       <Routes>
+        <Route
+          path="unauthorized"
+          element={
+            <UnauthorizedPage userVerificationData={fetchVerification} />
+          }
+        />
+        <Route
+          path="*"
+          element={<NotFoundPage userVerificationData={fetchVerification} />}
+        />
         {/* default Routes */}
         <Route
           path="/*"
@@ -258,13 +268,6 @@ function App() {
         newestOnTop={true}
         theme="colored"
       />
-
-      {userVerificationData && userVerificationData.trial && (
-        <AccessExpireModal
-          userVerificationData={userVerificationData}
-          isAuthenticated={isAuthenticated}
-        />
-      )}
     </main>
   );
 }

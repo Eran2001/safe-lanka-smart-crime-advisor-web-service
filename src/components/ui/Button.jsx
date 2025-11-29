@@ -13,7 +13,7 @@ const Button = ({
   icon,
   iconPosition = "left",
   iconClass = "w-5 h-5",
-  className = "bg-blue-600 text-white hover:bg-blue-700",
+  className = "bg-primary text-white hover:bg-blue-700",
   loadingText = "Loading...",
 }) => {
   const btnContent = (
