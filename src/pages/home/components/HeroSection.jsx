@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Shield,
   BarChart3,
   Map,
   ChevronRight,
@@ -12,8 +11,7 @@ import {
 
 const HeroSection = () => {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
-      {/* --- HERO SECTION --- */}
+    <div className="bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-red-50/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
@@ -74,7 +72,6 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* RIGHT SIDE — ILLUSTRATION */}
             <div className="lg:w-1/2 w-full perspective-1000">
               <div className="relative w-full max-w-lg mx-auto lg:mr-0 lg:ml-auto transform rotate-y-6 hover:rotate-y-0 transition-transform duration-700 ease-out">
                 <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden relative z-20">
@@ -205,7 +202,7 @@ const HeroSection = () => {
               { label: "Real-time Heatmaps", icon: Map },
               { label: "Trend Prediction", icon: BarChart3 },
               { label: "Detailed Reports", icon: FileText },
-              { label: "Secure Access", icon: Shield },
+              { label: "Secure Access", icon: Lock },
             ].map((feature, idx) => (
               <div
                 key={idx}
