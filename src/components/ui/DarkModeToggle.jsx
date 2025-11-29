@@ -1,4 +1,6 @@
-import { Sun, Moon } from "lucide-react";
+import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
+
 import useDarkMode from "@/hooks/useDarkMode";
 
 const DarkModeToggle = () => {
@@ -18,9 +20,9 @@ const DarkModeToggle = () => {
       "
     >
       {isDark ? (
-        <Sun size={20} strokeWidth={2.5} className="animate-fade-in" />
+        <LightModeRoundedIcon fontSize="small" className="animate-fade-in" />
       ) : (
-        <Moon size={20} strokeWidth={2.5} className="animate-fade-in" />
+        <DarkModeRoundedIcon fontSize="small" className="animate-fade-in" />
       )}
     </button>
   );
