@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// MUI ICONS
 import SecurityRoundedIcon from "@mui/icons-material/SecurityRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
@@ -49,7 +48,6 @@ const NavBar = () => {
             </span>
           </div>
 
-          {/* DESKTOP LINKS */}
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <a
@@ -63,7 +61,6 @@ const NavBar = () => {
             ))}
           </div>
 
-          {/* DESKTOP BUTTONS */}
           <div className="hidden md:flex items-center gap-3">
             <DarkModeToggle />
 
@@ -80,21 +77,15 @@ const NavBar = () => {
             </button>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
           <button
-            className="md:hidden text-slate-700 p-2 hover:bg-slate-100 rounded-lg transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center text-slate-700 hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
-              <CloseRoundedIcon fontSize="medium" />
-            ) : (
-              <MenuRoundedIcon fontSize="medium" />
-            )}
+            {!mobileMenuOpen && <MenuRoundedIcon fontSize="medium" />}
           </button>
         </div>
       </nav>
 
-      {/* OVERLAY */}
       <div
         className={`fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
           mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -102,7 +93,6 @@ const NavBar = () => {
         onClick={() => setMobileMenuOpen(false)}
       />
 
-      {/* MOBILE SLIDE MENU */}
       <div
         className={`fixed top-0 right-0 h-full w-[280px] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -114,13 +104,12 @@ const NavBar = () => {
 
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-slate-500 hover:bg-slate-100 rounded-full"
+              className="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded-full cursor-pointer"
             >
               <CloseRoundedIcon fontSize="small" />
             </button>
           </div>
 
-          {/* MOBILE LINKS */}
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
@@ -134,7 +123,6 @@ const NavBar = () => {
             ))}
           </div>
 
-          {/* MOBILE BUTTONS */}
           <div className="mt-auto flex flex-col gap-3 pt-6 border-t border-slate-100">
             <button className="w-full py-3 text-slate-600 font-semibold hover:bg-slate-50 rounded-xl transition-colors">
               Login
