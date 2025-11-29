@@ -27,7 +27,7 @@ const HeroSection = () => {
                 AI-Powered Policing
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-[1.15]">
                 SafeLanka <br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500">
                   Smart Crime Advisor
@@ -52,23 +52,6 @@ const HeroSection = () => {
                 <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 hover:border-blue-200 hover:bg-blue-50 text-slate-700 hover:text-blue-700 rounded-xl font-bold transition-all">
                   Learn More
                 </button>
-              </div>
-
-              <div className="pt-4 flex items-center justify-center lg:justify-start gap-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                {[
-                  ["AI", "TensorFlow"],
-                  ["DB", "MySQL"],
-                  ["FE", "React"],
-                ].map(([tag, title], i) => (
-                  <div key={i} className="flex flex-col items-center gap-1">
-                    <div className="h-8 w-8 flex items-center justify-center bg-slate-100 rounded text-xs font-bold text-slate-500">
-                      {tag}
-                    </div>
-                    <span className="text-[10px] uppercase font-semibold text-slate-400">
-                      {title}
-                    </span>
-                  </div>
-                ))}
               </div>
             </div>
 

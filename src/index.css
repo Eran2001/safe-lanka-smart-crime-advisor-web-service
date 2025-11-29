@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Satoshi", "sans-serif";
+  --colors-white: #d5ddde;
+  --color-muted: #a4b9cc;
+  --color-primary: #09254f;
+  --color-secondary: #0a4c9c;
+  --color-third: #5ea2d4;
+  --colors-black: #000;
+}
+
+@theme extend {
+  --font-family-display: Poppins, sans-serif;
 }
 
 @layer components {
