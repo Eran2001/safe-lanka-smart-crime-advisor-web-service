@@ -66,3 +66,17 @@ const Button = ({
 };
 
 export default Button;
+
+// usage
+
+{
+  /*
+  <Button text="Save" />
+
+  <Button text="Add Crime Record" icon="mdi:plus" iconPosition="left" />
+
+  <Button text="Next" icon="mdi:arrow-right" iconPosition="right" />
+
+  <Button isLoading={true} loadingText="Saving..." />
+*/
+}
