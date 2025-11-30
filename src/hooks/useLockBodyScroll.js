@@ -2,14 +2,23 @@ import { useEffect } from "react";
 
 export default function useLockBodyScroll(lock) {
   useEffect(() => {
+    const body = document.body;
+
     if (lock) {
-      document.body.style.overflow = "hidden";
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+
+      // Add padding to prevent layout shift
+      body.style.paddingRight = `${scrollbarWidth}px`;
+      body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      body.style.overflow = "";
+      body.style.paddingRight = "";
     }
 
     return () => {
-      document.body.style.overflow = "";
+      body.style.overflow = "";
+      body.style.paddingRight = "";
     };
   }, [lock]);
 }

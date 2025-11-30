@@ -52,7 +52,7 @@ const features = [
 
 const GroupChart = () => {
   return (
-    <section className="py-12">
+    <section className="py-12 max-lg:mt-28">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {features.map((item, i) => (

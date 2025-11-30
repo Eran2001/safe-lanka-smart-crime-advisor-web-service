@@ -18,12 +18,12 @@ import Drawer from "@/components/ui/Drawer";
 import GroupChart from "./GroupChart";
 
 const HeroSection = () => {
-  const [open, setOpen] = useState(false);
-  useLockBodyScroll(open);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // useLockBodyScroll(mobileMenuOpen);
 
   return (
     <>
-      <section className="relative w-full min-h-[90vh] lg:pt-20 lg:pb-20 overflow-hidden">
+      <section className="relative w-full min-h-[90vh] lg:pt-20 lg:pb-20">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
@@ -35,14 +35,14 @@ const HeroSection = () => {
                 AI-Powered Policing
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-muted-900 dark:text-white leading-[1.15]">
+              <h1 className="text-7xl sm:text-6xl font-extrabold text-muted-900 dark:text-white leading-[1.15]">
                 SafeLanka <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700 dark:from-slate-500 dark:to-slate-700">
+                <span className="text-5xl sm:text-5xl text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700 dark:from-slate-500 dark:to-slate-700">
                   Smart Crime Advisor
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-muted-900 dark:text-slate-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-base sm:text-xl text-muted-900 dark:text-slate-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Advanced predictive analytics and real-time visualization to
                 identify high-risk zones. Empowering Sri Lanka Police with
                 data-driven insights for a safer tomorrow.
@@ -50,7 +50,7 @@ const HeroSection = () => {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <button
-                  onClick={() => setOpen(true)}
+                  onClick={() => setMobileMenuOpen(true)}
                   className="w-full sm:w-auto px-8 py-4 bg-primary-500 dark:bg-slate-500 dark:hover:bg-slate-700 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-primary-700/20 dark:shadow-slate-700/20 hover:shadow-2xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Register Now
@@ -64,7 +64,7 @@ const HeroSection = () => {
             </div>
 
             <div className="lg:w-1/2 w-full relative perspective-1000">
-              <div className="relative w-full mx-auto transform lg:rotate-y-6 lg:rotate-x-2 transition-transform duration-500 hover:rotate-0 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+              <div className="relative w-full mx-auto transform lg:rotate-y-6 lg:rotate-x-2 transition-transform duration-500 hover:rotate-0 bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
                 <div className="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="flex gap-1.5">
@@ -138,7 +138,7 @@ const HeroSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex-1 bg-slate-50/50 dark:bg-slate-900 relative overflow-hidden p-6">
+                  <div className="flex-1 bg-slate-50/50 dark:bg-slate-900 relative p-6">
                     <div
                       className="absolute inset-0 opacity-[0.03] dark:opacity-10"
                       style={{
@@ -149,7 +149,7 @@ const HeroSection = () => {
                     ></div>
 
                     <div className="relative z-10 grid grid-cols-2 gap-4 h-full">
-                      <div className="col-span-2 sm:col-span-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 relative overflow-hidden group">
+                      <div className="col-span-2 sm:col-span-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 relative group">
                         <div className="flex justify-between items-center mb-4">
                           <h3 className="text-xs font-bold text-slate-700 dark:text-slate-200">
                             Live Heatmap
@@ -171,8 +171,8 @@ const HeroSection = () => {
                             Crime Index: 92
                           </div>
                         </div>
-                        <div className="mt-3 flex gap-2 overflow-hidden">
-                          <div className="h-1.5 flex-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="mt-3 flex gap-2">
+                          <div className="h-1.5 flex-1 bg-slate-100 rounded-full">
                             <div className="h-full bg-blue-500 w-[70%]"></div>
                           </div>
                           <span className="text-[10px] text-slate-400 font-mono">
@@ -270,7 +270,7 @@ const HeroSection = () => {
         </div>
 
         {/* waves */}
-        <div className="absolute bottom-0 left-0 w-full opacity-60 pointer-events-none overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full opacity-60 pointer-events-none max-lg:translate-y-30">
           <svg
             viewBox="0 0 1440 320"
             className="w-full"
@@ -283,7 +283,7 @@ const HeroSection = () => {
           </svg>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full pointer-events-none max-lg:translate-y-30">
           <svg
             viewBox="0 0 1440 320"
             className="w-full"
@@ -301,8 +301,8 @@ const HeroSection = () => {
       <GroupChart />
 
       <Drawer
-        activeModal={open}
-        onClose={() => setOpen(false)}
+        activeModal={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
         title="User Details"
         themeClass="max-w-[400px]"
       >
