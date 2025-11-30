@@ -20,7 +20,7 @@ const DarkModeToggle = () => {
     <button
       onClick={toggle}
       className={`w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer
-    text-black dark:text-white hover:bg-slate-200 dark:hover:text-white dark:hover:bg-white/10
+    text-muted-900 dark:text-white hover:bg-muted-200 dark:hover:text-muted-900 dark:hover:bg-muted-200
     ${isScrolled && isDark ? "text-white" : ""}
   `}
     >

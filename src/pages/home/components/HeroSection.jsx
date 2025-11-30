@@ -11,12 +11,15 @@ import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 import LockRoundedIcon from "@mui/icons-material/LockRounded";
 
+import useLockBodyScroll from "@/hooks/useLockBodyScroll";
+
 import Drawer from "@/components/ui/Drawer";
 
 import GroupChart from "./GroupChart";
 
 const HeroSection = () => {
   const [open, setOpen] = useState(false);
+  useLockBodyScroll(open);
 
   return (
     <>
@@ -32,14 +35,14 @@ const HeroSection = () => {
                 AI-Powered Policing
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-700 leading-[1.15]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-muted-900 dark:text-white leading-[1.15]">
                 SafeLanka <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700 dark:from-slate-700 dark:to-slate-900">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700 dark:from-slate-500 dark:to-slate-700">
                   Smart Crime Advisor
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-muted-500 dark:text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-900 dark:text-slate-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Advanced predictive analytics and real-time visualization to
                 identify high-risk zones. Empowering Sri Lanka Police with
                 data-driven insights for a safer tomorrow.
@@ -48,13 +51,13 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <button
                   onClick={() => setOpen(true)}
-                  className="w-full sm:w-auto px-8 py-4 bg-primary-500 dark:bg-slate-700 dark:hover:bg-slate-900 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-primary-700/20 dark:shadow-slate-700/20 hover:shadow-2xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-4 bg-primary-500 dark:bg-slate-500 dark:hover:bg-slate-700 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-primary-700/20 dark:shadow-slate-700/20 hover:shadow-2xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Register Now
                   <ChevronRightRoundedIcon className="group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button className="w-full sm:w-auto px-8 py-4 bg-white dark:text-slate-900 border-2 border-primary-200 dark:border-slate-700 hover:border-primary-300 hover:bg-primary-100 text-muted-700 hover:text-primary-700 rounded-xl font-bold transition-all cursor-pointer">
+                <button className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-900 dark:text-slate-500 border-2 border-primary-200 dark:border-slate-500 hover:border-primary-200 dark:hover:border-slate-700 hover:bg-primary-100 hover:dark:bg-muted-100 text-muted-700 hover:text-primary-700 dark:hover:text-muted-900 rounded-xl font-bold transition-all cursor-pointer">
                   Learn More
                 </button>
               </div>

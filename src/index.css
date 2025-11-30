@@ -7,6 +7,8 @@ body {
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* text-muted-900 dark:text-white hover:bg-muted-200 dark:hover:text-muted-900 dark:hover:bg-muted-200 */
+
 @theme {
   --color-white: #ffffff;
   --color-black: #000000;
@@ -16,6 +18,7 @@ body {
   --color-muted-200: #e2e8f0;
   --color-muted-500: #64748b;
   --color-muted-700: #475569;
+  --color-muted-900: #0f172a;
 
   /* PRIMARY */
   --color-primary-100: #dbeafe;

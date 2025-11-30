@@ -37,7 +37,7 @@ const Drawer = ({
           leaveTo="opacity-0"
         >
           <DialogBackdrop
-            className={`fixed inset-0 backdrop-blur-sm bg-black/40 ${backdropOpacity}`}
+            className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-all ${backdropOpacity}`}
           />
         </TransitionChild>
 
@@ -54,23 +54,26 @@ const Drawer = ({
                 leaveTo="translate-x-full"
               >
                 <DialogPanel
-                  className={`pointer-events-auto w-screen bg-white dark:bg-gray-900 shadow-xl ${themeClass}`}
+                  className={`pointer-events-auto w-[280px] bg-white dark:bg-muted-900 
+                    rounded-l-3xl shadow-2xl ${themeClass}`}
                 >
-                  <div className="flex justify-between items-center px-4 py-4">
-                    <DialogTitle className="text-lg font-semibold text-black">
+                  <div className="p-6 flex justify-between items-center border-b border-slate-200 dark:border-muted-200">
+                    <DialogTitle className="text-lg font-bold text-muted-900 dark:text-white">
                       {title}
                     </DialogTitle>
 
                     <button
-                      className="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded-full cursor-pointer"
                       onClick={closeModal}
+                      className="w-10 h-10 flex items-center justify-center rounded-full 
+                      text-muted-900 dark:text-white hover:bg-muted-200 
+                      dark:hover:text-muted-900 dark:hover:bg-muted-200 cursor-pointer transition"
                     >
-                      <CloseIcon className="w-6! h-6!" />
+                      <CloseIcon fontSize="small" />
                     </button>
                   </div>
 
                   <div
-                    className={`h-[calc(100%-64px)] overflow-y-auto ${mainXPadding} ${mainYPadding}`}
+                    className={`h-[calc(100%-80px)] overflow-y-auto p-6 ${mainXPadding} ${mainYPadding}`}
                   >
                     {children}
                   </div>

@@ -10,7 +10,7 @@ const DefaultLayout = () => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-black selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <NavBar />
       <main
         className={`relative flex-1 pt-28 pb-10 ${
