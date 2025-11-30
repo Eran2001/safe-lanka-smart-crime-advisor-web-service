@@ -15,7 +15,7 @@ import useLockBodyScroll from "@/hooks/useLockBodyScroll";
 
 import Drawer from "@/components/ui/Drawer";
 
-import GroupChart from "./GroupChart";
+import FeatureOverview from "./FeatureOverview";
 
 const HeroSection = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -302,7 +302,7 @@ const HeroSection = () => {
       </section>
 
       {/* bottom card */}
-      <GroupChart />
+      <FeatureOverview />
 
       <Drawer
         activeModal={mobileMenuOpen}
