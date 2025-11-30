@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import Sidebar from "@/components/partials/sidebar";
+import Sidebar from "@/components/partials/Sidebar";
 import TopHeader from "@/components/partials/TopHeader";
 import Loading from "@/components/ui/Loading";
 
