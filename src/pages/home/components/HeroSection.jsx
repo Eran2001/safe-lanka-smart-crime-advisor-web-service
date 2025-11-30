@@ -3,41 +3,43 @@ import React, { useState } from "react";
 import MapRoundedIcon from "@mui/icons-material/MapRounded";
 import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
-import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
-import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import WhatshotRoundedIcon from "@mui/icons-material/WhatshotRounded";
 import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
+import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
+import LockRoundedIcon from "@mui/icons-material/LockRounded";
 
 import Drawer from "@/components/ui/Drawer";
+
+import GroupChart from "./GroupChart";
 
 const HeroSection = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <section className="lg:pt-20 lg:pb-20 overflow-hidden">
+      <section className="relative w-full min-h-[90vh] lg:pt-20 lg:pb-20 overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase mx-auto lg:mx-0">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 border border-primary-100 text-primary-700 text-xs font-bold tracking-wide uppercase mx-auto lg:mx-0">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
                 </span>
                 AI-Powered Policing
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.15]">
                 SafeLanka <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700">
                   Smart Crime Advisor
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-500 dark:text-white max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Advanced predictive analytics and real-time visualization to
                 identify high-risk zones. Empowering Sri Lanka Police with
                 data-driven insights for a safer tomorrow.
@@ -46,13 +48,13 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <button
                   onClick={() => setOpen(true)}
-                  className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-xl shadow-blue-700/20 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-8 py-4 bg-primary-500 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-primary-700/20 hover:shadow-2xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Register Now
                   <ChevronRightRoundedIcon className="group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 hover:border-blue-200 hover:bg-blue-50 text-slate-700 hover:text-blue-700 rounded-xl font-bold transition-all">
+                <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-primary-200 hover:border-primary-300 hover:bg-primary-50 text-muted-700 hover:text-primary-700 rounded-xl font-bold transition-all cursor-pointer">
                   Learn More
                 </button>
               </div>
@@ -87,19 +89,49 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                <div className="flex h-[400px]">
-                  <div className="w-16 bg-slate-50 dark:bg-slate-800/50 border-r border-slate-100 dark:border-slate-800 flex flex-col items-center py-6 gap-6">
-                    <div className="p-2 bg-blue-100 text-blue-600 rounded-lg shadow-sm">
+                <div className="flex h-[500px]">
+                  <div className="w-16 bg-slate-50 dark:bg-slate-800/50 border-r border-muted-100 dark:border-slate-800 flex flex-col items-center py-6 gap-6">
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer 
+                    bg-blue-100 text-blue-600 dark:hover:text-white shadow-sm
+                    hover:bg-blue-200 dark:hover:bg-blue-300/20"
+                    >
                       <GridViewRoundedIcon sx={{ fontSize: 20 }} />
                     </div>
-                    <div className="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition">
+
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer
+                    text-slate-400 hover:bg-slate-200 dark:hover:text-white dark:hover:bg-white/10"
+                    >
                       <MapRoundedIcon sx={{ fontSize: 20 }} />
                     </div>
-                    <div className="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition">
+
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer
+                    text-slate-400 hover:bg-slate-200 dark:hover:text-white dark:hover:bg-white/10"
+                    >
                       <BarChartRoundedIcon sx={{ fontSize: 20 }} />
                     </div>
-                    <div className="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition">
+
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer
+                    text-slate-400 hover:bg-slate-200 dark:hover:text-white dark:hover:bg-white/10"
+                    >
                       <PeopleAltRoundedIcon sx={{ fontSize: 20 }} />
+                    </div>
+
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer
+                    text-slate-400 hover:bg-slate-200 dark:hover:text-white dark:hover:bg-white/10"
+                    >
+                      <DescriptionRoundedIcon sx={{ fontSize: 20 }} />
+                    </div>
+
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer
+                    text-slate-400 hover:bg-slate-200 dark:hover:text-white dark:hover:bg-white/10"
+                    >
+                      <LockRoundedIcon sx={{ fontSize: 20 }} />
                     </div>
                   </div>
 
@@ -208,6 +240,23 @@ const HeroSection = () => {
                             ></div>
                           ))}
                         </div>
+                        <div>
+                          <p className="text-[10px] text-slate-400 font-bold uppercase">
+                            System Efficiency
+                          </p>
+                          <p className="text-sm font-bold text-blue-600">
+                            98.5% Accuracy
+                          </p>
+                        </div>
+                        <div className="flex items-end gap-1 h-8">
+                          {[30, 50, 45, 70, 60, 80, 55].map((h, i) => (
+                            <div
+                              key={i}
+                              className="w-2 bg-blue-100 dark:bg-blue-900 rounded-sm"
+                              style={{ height: `${h}%` }}
+                            ></div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -216,28 +265,37 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-black py-8">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: "Real-time Heatmaps", icon: MapRoundedIcon },
-              { label: "Trend Prediction", icon: BarChartRoundedIcon },
-              { label: "Detailed Reports", icon: DescriptionRoundedIcon },
-              { label: "Secure Access", icon: LockRoundedIcon },
-            ].map((feature, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-center gap-2 text-slate-500 hover:text-blue-600 transition-colors cursor-default"
-              >
-                <feature.icon className="text-blue-600" sx={{ fontSize: 20 }} />
-                <span className="text-sm font-semibold">{feature.label}</span>
-              </div>
-            ))}
-          </div>
+        {/* waves */}
+        <div className="absolute bottom-0 left-0 w-full opacity-60 pointer-events-none overflow-hidden">
+          <svg
+            viewBox="0 0 1440 320"
+            className="w-full"
+            preserveAspectRatio="none"
+          >
+            <path
+              className="fill-primary-400 dark:fill-slate-900"
+              d="M0,160L80,170C160,180,320,200,480,202.7C640,205,800,192,960,170.7C1120,149,1280,117,1360,101.3L1440,85L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
+
+        <div className="absolute bottom-0 left-0 w-full pointer-events-none overflow-hidden">
+          <svg
+            viewBox="0 0 1440 320"
+            className="w-full"
+            preserveAspectRatio="none"
+          >
+            <path
+              className="fill-primary-500 dark:fill-primary-700"
+              d="M0,224L80,224C160,224,320,224,480,202.7C640,181,800,139,960,112C1120,85,1280,75,1360,69.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+          </svg>
         </div>
       </section>
+
+      {/* bottom card */}
+      <GroupChart />
 
       <Drawer
         activeModal={open}

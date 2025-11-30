@@ -1,6 +1,6 @@
 import React from "react";
 
-import Icon from "@/components/ui/Icon";
+import Icons from "@/components/ui/Icons";
 
 const Badge = ({
   className = "bg-danger-500 text-white",
@@ -14,7 +14,7 @@ const Badge = ({
         <span className="inline-flex items-center">
           {icon && (
             <span className="inline-block ltr:mr-1 rtl:ml-1">
-              <Icon icon={icon} />
+              <Icons icon={icon} />
             </span>
           )}
           {label}

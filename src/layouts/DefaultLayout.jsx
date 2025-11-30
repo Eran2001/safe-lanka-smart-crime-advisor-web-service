@@ -12,7 +12,12 @@ const DefaultLayout = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-black selection:bg-blue-100 selection:text-blue-900">
       <NavBar />
-      <main className="relative flex-1 container mx-auto pt-28 pb-10">
+      <main
+        className={`relative flex-1 pt-28 pb-10 ${
+          location.pathname === "/" ? "" : "container mx-auto"
+        }`}
+      >
+        {/* <div className="absolute inset-0 bg-linear-to-br from-primary-700 via-white to-primary-500 pointer-events-none"></div> */}
         <Suspense
           fallback={
             <div className="flex items-center justify-center min-h-[400px]">
