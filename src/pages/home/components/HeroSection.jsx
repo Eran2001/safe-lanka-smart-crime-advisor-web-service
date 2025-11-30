@@ -161,8 +161,12 @@ const HeroSection = () => {
 
                         <div className="h-40 w-full bg-slate-100 dark:bg-slate-700/50 rounded-lg relative">
                           <div className="absolute top-1/2 right-1/3">
-                            <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping"></span>
-                            <div className="relative inline-flex rounded-full h-3 w-3 bg-red-500 border-2 border-white"></div>
+                            <div className="relative w-8 h-8">
+                              <span className="absolute inset-0 inline-flex rounded-full items-center justify-center transition-all cursor-pointer bg-red-400 opacity-75 animate-ping"></span>
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-3 h-3 rounded-full bg-red-500 border-2 border-white"></div>
+                              </div>
+                            </div>
                           </div>
                           <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-amber-400 rounded-full"></div>
                           <div className="absolute top-1/4 left-1/2 w-2 h-2 bg-green-400 rounded-full"></div>
