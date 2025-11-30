@@ -35,7 +35,7 @@ const HeroSection = () => {
                 AI-Powered Policing
               </div>
 
-              <h1 className="text-7xl sm:text-6xl font-extrabold text-muted-900 dark:text-white leading-[1.15]">
+              <h1 className="text-7xl sm:text-6xl font-extrabold text-muted-900 dark:text-white leading-12 lg:leading-[1.15]">
                 SafeLanka <br />
                 <span className="text-5xl sm:text-5xl text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700 dark:from-slate-500 dark:to-slate-700">
                   Smart Crime Advisor
