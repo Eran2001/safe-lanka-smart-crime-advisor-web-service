@@ -92,7 +92,7 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                <div className="flex h-[500px]">
+                <div className="flex h-full sm:h-[500px]">
                   <div className="w-16 bg-slate-50 dark:bg-slate-800/50 border-r border-muted-100 dark:border-slate-800 flex flex-col items-center py-6 gap-6">
                     <div
                       className="w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer 
@@ -230,23 +230,6 @@ const HeroSection = () => {
                       </div>
 
                       <div className="col-span-2 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 flex items-center justify-between">
-                        <div>
-                          <p className="text-[10px] text-slate-400 font-bold uppercase">
-                            System Efficiency
-                          </p>
-                          <p className="text-sm font-bold text-blue-600">
-                            98.5% Accuracy
-                          </p>
-                        </div>
-                        <div className="flex items-end gap-1 h-8">
-                          {[30, 50, 45, 70, 60, 80, 55].map((h, i) => (
-                            <div
-                              key={i}
-                              className="w-2 bg-blue-100 dark:bg-blue-900 rounded-sm"
-                              style={{ height: `${h}%` }}
-                            ></div>
-                          ))}
-                        </div>
                         <div>
                           <p className="text-[10px] text-slate-400 font-bold uppercase">
                             System Efficiency
