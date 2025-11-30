@@ -24,22 +24,22 @@ const HeroSection = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 border border-primary-100 text-primary-700 text-xs font-bold tracking-wide uppercase mx-auto lg:mx-0">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 dark:bg-slate-500 border border-primary-100 dark:border-slate-100 text-primary-700 dark:text-white text-xs font-bold tracking-wide uppercase mx-auto lg:mx-0">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500 dark:bg-slate-100"></span>
                 </span>
                 AI-Powered Policing
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.15]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-700 leading-[1.15]">
                 SafeLanka <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-500 to-primary-700 dark:from-slate-700 dark:to-slate-900">
                   Smart Crime Advisor
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-muted-500 dark:text-white max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-500 dark:text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Advanced predictive analytics and real-time visualization to
                 identify high-risk zones. Empowering Sri Lanka Police with
                 data-driven insights for a safer tomorrow.
@@ -48,13 +48,13 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <button
                   onClick={() => setOpen(true)}
-                  className="w-full sm:w-auto px-8 py-4 bg-primary-500 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-primary-700/20 hover:shadow-2xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-4 bg-primary-500 dark:bg-slate-700 dark:hover:bg-slate-900 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-primary-700/20 dark:shadow-slate-700/20 hover:shadow-2xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Register Now
                   <ChevronRightRoundedIcon className="group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-primary-200 hover:border-primary-300 hover:bg-primary-50 text-muted-700 hover:text-primary-700 rounded-xl font-bold transition-all cursor-pointer">
+                <button className="w-full sm:w-auto px-8 py-4 bg-white dark:text-slate-900 border-2 border-primary-200 dark:border-slate-700 hover:border-primary-300 hover:bg-primary-100 text-muted-700 hover:text-primary-700 rounded-xl font-bold transition-all cursor-pointer">
                   Learn More
                 </button>
               </div>
@@ -287,7 +287,7 @@ const HeroSection = () => {
             preserveAspectRatio="none"
           >
             <path
-              className="fill-primary-500 dark:fill-primary-700"
+              className="fill-primary-500 dark:fill-slate-700"
               d="M0,224L80,224C160,224,320,224,480,202.7C640,181,800,139,960,112C1120,85,1280,75,1360,69.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
             ></path>
           </svg>

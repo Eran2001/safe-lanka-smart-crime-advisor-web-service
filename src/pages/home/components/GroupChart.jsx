@@ -59,20 +59,20 @@ const GroupChart = () => {
             <div
               key={i}
               className="group p-6 text-center rounded-3xl shadow-xl transition-all duration-300 
-                       hover:bg-primary-700 cursor-pointer"
+                       hover:bg-primary-700 dark:bg-slate-900 cursor-pointer"
             >
               <div
-                className="mx-auto h-16 w-16 flex items-center justify-center rounded-full bg-primary-500 text-white 
+                className="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-primary-500 text-white 
                            transition-all duration-300 group-hover:bg-white group-hover:text-primary-500"
               >
                 <item.icon fontSize="large" />
               </div>
 
-              <h3 className="mt-2 text-lg text-muted-500 transition-all duration-300 group-hover:text-white">
+              <h3 className="mt-2 text-base text-muted-500 dark:text-white transition-all duration-300 group-hover:text-white">
                 {item.label}
               </h3>
 
-              <p className="text-3xl font-bold text-black mt-1 transition-all duration-300 group-hover:text-white">
+              <p className="text-xl font-bold text-black dark:text-muted-500 mt-1 transition-all duration-300 group-hover:text-white">
                 {item.count}
               </p>
 
