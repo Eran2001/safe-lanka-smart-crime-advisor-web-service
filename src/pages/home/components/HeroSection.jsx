@@ -277,7 +277,7 @@ const HeroSection = () => {
             preserveAspectRatio="none"
           >
             <path
-              className="fill-primary-400 dark:fill-slate-900"
+              className="fill-primary-400 dark:fill-slate-700"
               d="M0,160L80,170C160,180,320,200,480,202.7C640,205,800,192,960,170.7C1120,149,1280,117,1360,101.3L1440,85L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
             ></path>
           </svg>
@@ -290,7 +290,7 @@ const HeroSection = () => {
             preserveAspectRatio="none"
           >
             <path
-              className="fill-primary-500 dark:fill-slate-700"
+              className="fill-primary-500 dark:fill-slate-500"
               d="M0,224L80,224C160,224,320,224,480,202.7C640,181,800,139,960,112C1120,85,1280,75,1360,69.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
             ></path>
           </svg>

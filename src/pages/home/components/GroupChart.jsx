@@ -59,11 +59,11 @@ const GroupChart = () => {
             <div
               key={i}
               className="group p-6 text-center rounded-3xl shadow-xl transition-all duration-300 
-                       hover:bg-primary-700 dark:bg-slate-900 cursor-pointer"
+                       hover:bg-primary-700 dark:bg-muted-500 dark:hover:bg-muted-700 cursor-pointer"
             >
               <div
-                className="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-primary-500 text-white 
-                           transition-all duration-300 group-hover:bg-white group-hover:text-primary-500"
+                className="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-primary-500 dark:bg-muted-900 text-white 
+                           transition-all duration-300 group-hover:bg-white dark:group-hover:text-muted-900 group-hover:text-primary-500"
               >
                 <item.icon fontSize="large" />
               </div>
@@ -72,13 +72,13 @@ const GroupChart = () => {
                 {item.label}
               </h3>
 
-              <p className="text-xl font-bold text-black dark:text-muted-500 mt-1 transition-all duration-300 group-hover:text-white">
+              <p className="text-xl font-bold text-black dark:text-muted-900 mt-1 transition-all duration-300 group-hover:text-white">
                 {item.count}
               </p>
 
               <Badge
                 label={item.percent}
-                className="inline-block mt-2 text-xs font-medium text-white bg-primary-500 group-hover:bg-white group-hover:text-primary-500 rounded-xl transition-all duration-300"
+                className="inline-block mt-2 text-xs font-medium text-white bg-primary-500 dark:bg-muted-900 group-hover:bg-white group-hover:text-primary-500 dark:group-hover:text-muted-900 rounded-xl transition-all duration-300"
               />
             </div>
           ))}
