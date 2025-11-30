@@ -58,7 +58,7 @@ const NavBar = () => {
                   to={item.link}
                   className={`relative px-4 py-2 text-sm font-medium text-black dark:text-white ${
                     isActive ? "bg-slate-100 dark:bg-white/10" : ""
-                  } rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-500 group`}
+                  } rounded-lg hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-500 group`}
                 >
                   {item.name}
                 </Link>
@@ -66,10 +66,13 @@ const NavBar = () => {
             })}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-2">
             <DarkModeToggle />
 
-            <button className="text-black dark:text-white text-sm font-semibold transition">
+            <button
+              className="text-black dark:text-white px-4 py-2 text-sm font-medium rounded-lg hover:bg-slate-200
+                             dark:hover:bg-white/10 transition-all duration-500 group cursor-pointer"
+            >
               Login
             </button>
 

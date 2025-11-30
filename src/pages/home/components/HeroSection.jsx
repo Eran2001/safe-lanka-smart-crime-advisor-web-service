@@ -3,219 +3,241 @@ import React, { useState } from "react";
 import MapRoundedIcon from "@mui/icons-material/MapRounded";
 import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
-import ShowChartRoundedIcon from "@mui/icons-material/ShowChartRounded";
-import WarningAmberRoundedIcon from "@mui/icons-material/WarningAmberRounded";
 import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 import LockRoundedIcon from "@mui/icons-material/LockRounded";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
+import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
+import WhatshotRoundedIcon from "@mui/icons-material/WhatshotRounded";
+import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 
 import Drawer from "@/components/ui/Drawer";
 
 const HeroSection = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <>
-      <div>
-        <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              {/* LEFT CONTENT */}
-              <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase mx-auto lg:mx-0">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                  </span>
-                  AI-Powered Policing
-                </div>
-
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-white leading-[1.15]">
-                  SafeLanka <br />
-                  <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500">
-                    Smart Crime Advisor
-                  </span>
-                </h1>
-
-                <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Advanced predictive analytics and real-time visualization to
-                  identify high-risk zones. Empowering Sri Lanka Police with
-                  data-driven insights for a safer tomorrow.
-                </p>
-
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                  <button
-                    onClick={() => setOpen(true)}
-                    className="w-full sm:w-auto px-8 py-4 bg-primary-500 hover:bg-primary-700 text-white rounded-xl font-bold shadow-xl shadow-blue-700/20 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
-                  >
-                    Register Now
-                    <ChevronRightRoundedIcon className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-
-                  <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 hover:border-blue-200 hover:bg-blue-50 text-slate-700 hover:text-blue-700 rounded-xl font-bold transition-all">
-                    Learn More
-                  </button>
-                </div>
+      <section className="lg:pt-20 lg:pb-20 overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase mx-auto lg:mx-0">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                AI-Powered Policing
               </div>
 
-              {/* RIGHT CONTENT */}
-              <div className="lg:w-1/2 w-full perspective-1000">
-                <div className="relative w-full max-w-lg mx-auto lg:mr-0 lg:ml-auto transform rotate-y-6 hover:rotate-y-0 transition-transform duration-700 ease-out">
-                  <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden relative z-20">
-                    <div className="bg-slate-50 border-b border-slate-100 px-4 py-3 flex items-center gap-2">
-                      <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                        <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                      </div>
-                      <div className="ml-4 bg-white px-3 py-1 rounded text-[10px] text-slate-400 font-mono shadow-sm border border-slate-100 w-full max-w-[200px]">
-                        admin.safelanka.gov/dashboard
-                      </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.15]">
+                SafeLanka <br />
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500">
+                  Smart Crime Advisor
+                </span>
+              </h1>
+
+              <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Advanced predictive analytics and real-time visualization to
+                identify high-risk zones. Empowering Sri Lanka Police with
+                data-driven insights for a safer tomorrow.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <button
+                  onClick={() => setOpen(true)}
+                  className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-xl shadow-blue-700/20 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
+                >
+                  Register Now
+                  <ChevronRightRoundedIcon className="group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 hover:border-blue-200 hover:bg-blue-50 text-slate-700 hover:text-blue-700 rounded-xl font-bold transition-all">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            <div className="lg:w-1/2 w-full relative perspective-1000">
+              <div className="relative w-full mx-auto transform lg:rotate-y-6 lg:rotate-x-2 transition-transform duration-500 hover:rotate-0 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                <div className="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
                     </div>
 
-                    <div className="p-1 bg-slate-50 min-h-[300px] relative overflow-hidden group">
-                      <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                        <svg
-                          viewBox="0 0 200 200"
-                          className="w-full h-full text-blue-900 fill-current"
-                        >
-                          <path
-                            d="M45.5,-76.3C58.9,-69.3,69.6,-59.1,78.3,-47.8C87,-36.5,93.6,-24,92.6,-11.9C91.6,0.3,82.9,12.1,73.6,23.3C64.3,34.5,54.4,45.1,43.4,54.7C32.4,64.3,20.2,72.9,6.7,75.4C-6.8,77.9,-21.7,74.3,-35.1,67.2C-48.6,60.1,-60.6,49.5,-69.1,36.7C-77.6,23.9,-82.7,8.9,-80.7,-5.1C-78.7,-19.1,-69.6,-32.1,-58.5,-42.6C-47.3,-53.1,-34.1,-61,-20.9,-68.1C-7.8,-75.2,5.3,-81.4,18.8,-81.4"
-                            transform="translate(100 100)"
-                          />
-                        </svg>
+                    <div className="hidden sm:flex items-center gap-2 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 rounded-md text-xs text-slate-400 w-48">
+                      <SearchRoundedIcon sx={{ fontSize: 16 }} />
+                      <span>Search Division...</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <NotificationsNoneRoundedIcon
+                        className="text-slate-400"
+                        sx={{ fontSize: 20 }}
+                      />
+                      <div className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
+                    </div>
+                    <div className="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold">
+                      A
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex h-[400px]">
+                  <div className="w-16 bg-slate-50 dark:bg-slate-800/50 border-r border-slate-100 dark:border-slate-800 flex flex-col items-center py-6 gap-6">
+                    <div className="p-2 bg-blue-100 text-blue-600 rounded-lg shadow-sm">
+                      <GridViewRoundedIcon sx={{ fontSize: 20 }} />
+                    </div>
+                    <div className="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition">
+                      <MapRoundedIcon sx={{ fontSize: 20 }} />
+                    </div>
+                    <div className="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition">
+                      <BarChartRoundedIcon sx={{ fontSize: 20 }} />
+                    </div>
+                    <div className="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition">
+                      <PeopleAltRoundedIcon sx={{ fontSize: 20 }} />
+                    </div>
+                  </div>
+
+                  <div className="flex-1 bg-slate-50/50 dark:bg-slate-900 relative overflow-hidden p-6">
+                    <div
+                      className="absolute inset-0 opacity-[0.03] dark:opacity-10"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(#000 1px, transparent 1px)",
+                        backgroundSize: "20px 20px",
+                      }}
+                    ></div>
+
+                    <div className="relative z-10 grid grid-cols-2 gap-4 h-full">
+                      <div className="col-span-2 sm:col-span-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 relative overflow-hidden group">
+                        <div className="flex justify-between items-center mb-4">
+                          <h3 className="text-xs font-bold text-slate-700 dark:text-slate-200">
+                            Live Heatmap
+                          </h3>
+                          <span className="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded font-bold">
+                            HIGH RISK
+                          </span>
+                        </div>
+
+                        <div className="h-40 w-full bg-slate-100 dark:bg-slate-700/50 rounded-lg relative">
+                          <div className="absolute top-1/2 right-1/3">
+                            <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping"></span>
+                            <div className="relative inline-flex rounded-full h-3 w-3 bg-red-500 border-2 border-white"></div>
+                          </div>
+                          <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-amber-400 rounded-full"></div>
+                          <div className="absolute top-1/4 left-1/2 w-2 h-2 bg-green-400 rounded-full"></div>
+
+                          <div className="absolute top-[40%] right-[5%] bg-slate-800 text-white text-[9px] px-2 py-1 rounded shadow-lg">
+                            Crime Index: 92
+                          </div>
+                        </div>
+                        <div className="mt-3 flex gap-2 overflow-hidden">
+                          <div className="h-1.5 flex-1 bg-slate-100 rounded-full overflow-hidden">
+                            <div className="h-full bg-blue-500 w-[70%]"></div>
+                          </div>
+                          <span className="text-[10px] text-slate-400 font-mono">
+                            70% Scanned
+                          </span>
+                        </div>
                       </div>
 
-                      <div className="relative z-10 grid grid-cols-2 gap-2 p-4">
-                        <div className="col-span-2 bg-white p-3 rounded-xl shadow-sm border border-slate-100">
-                          <div className="flex justify-between items-center mb-3">
-                            <h3 className="text-xs font-bold text-slate-700 flex items-center gap-1">
-                              <MapRoundedIcon
-                                fontSize="inherit"
-                                sx={{ fontSize: 14 }}
-                              />
-                              Live Risk Map
-                            </h3>
-                            <span className="text-[10px] text-red-500 font-bold bg-red-50 px-1.5 py-0.5 rounded">
-                              High Risk Detected
+                      <div className="col-span-2 sm:col-span-1 flex flex-col gap-4">
+                        <div className="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 flex flex-col justify-center">
+                          <div className="flex items-center gap-2 mb-2">
+                            <WhatshotRoundedIcon
+                              className="text-orange-500"
+                              sx={{ fontSize: 18 }}
+                            />
+                            <span className="text-xs font-semibold text-slate-500">
+                              Predicted Incidents
                             </span>
                           </div>
-
-                          <div className="h-32 bg-slate-100 rounded-lg relative overflow-hidden">
-                            <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-500 rounded-full"></div>
-                            <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
-                            <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-red-500 rounded-full"></div>
-                            <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-amber-400 rounded-full"></div>
-                            <div className="absolute top-10 right-10 w-2 h-2 bg-green-400 rounded-full"></div>
+                          <div className="text-2xl font-bold text-slate-800 dark:text-white">
+                            124{" "}
+                            <span className="text-xs font-normal text-green-500 ml-1">
+                              ↓ 12%
+                            </span>
                           </div>
                         </div>
 
-                        <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100">
-                          <div className="flex justify-between items-center mb-2">
-                            <h3 className="text-xs font-bold text-slate-700">
-                              Crime Trend
-                            </h3>
-                            <BarChartRoundedIcon
-                              sx={{ fontSize: 14 }}
-                              className="text-slate-400"
-                            />
+                        <div className="flex-2 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-4">
+                          <h3 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-3">
+                            Recent Alerts
+                          </h3>
+                          <div className="space-y-3">
+                            {[1, 2].map((i) => (
+                              <div
+                                key={i}
+                                className="flex items-start gap-2 pb-2 border-b border-slate-50 last:border-0 last:pb-0"
+                              >
+                                <div className="w-1.5 h-1.5 mt-1 rounded-full bg-red-500"></div>
+                                <div>
+                                  <p className="text-[10px] font-bold text-slate-700 dark:text-slate-300">
+                                    Robbery Alert
+                                  </p>
+                                  <p className="text-[9px] text-slate-400">
+                                    Colombo District • 2m ago
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
                           </div>
+                        </div>
+                      </div>
 
-                          <div className="flex items-end gap-1 h-12">
-                            <div className="w-1/5 bg-blue-100 h-[40%] rounded-sm"></div>
-                            <div className="w-1/5 bg-blue-200 h-[60%] rounded-sm"></div>
-                            <div className="w-1/5 bg-blue-300 h-[50%] rounded-sm"></div>
-                            <div className="w-1/5 bg-blue-400 h-[80%] rounded-sm"></div>
-                            <div className="w-1/5 bg-red-500 h-[90%] rounded-sm"></div>
-                          </div>
-
-                          <p className="text-[10px] text-slate-500 mt-1">
-                            Prediction:{" "}
-                            <span className="font-bold text-red-500">
-                              Increasing
-                            </span>
+                      <div className="col-span-2 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 flex items-center justify-between">
+                        <div>
+                          <p className="text-[10px] text-slate-400 font-bold uppercase">
+                            System Efficiency
+                          </p>
+                          <p className="text-sm font-bold text-blue-600">
+                            98.5% Accuracy
                           </p>
                         </div>
-
-                        <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-center">
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="p-1.5 bg-green-100 text-green-700 rounded-lg">
-                              <ShowChartRoundedIcon sx={{ fontSize: 16 }} />
-                            </div>
-
-                            <div>
-                              <p className="text-[10px] text-slate-500">
-                                System Status
-                              </p>
-                              <p className="text-xs font-bold text-green-600">
-                                Active
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-                            <div className="h-full bg-green-500 w-[98%]"></div>
-                          </div>
+                        <div className="flex items-end gap-1 h-8">
+                          {[30, 50, 45, 70, 60, 80, 55].map((h, i) => (
+                            <div
+                              key={i}
+                              className="w-2 bg-blue-100 dark:bg-blue-900 rounded-sm"
+                              style={{ height: `${h}%` }}
+                            ></div>
+                          ))}
                         </div>
                       </div>
                     </div>
-                  </div>
-
-                  <div
-                    className="absolute right-0 -top-8 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-slate-100 z-30 animate-bounce"
-                    style={{ animationDuration: "3s" }}
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="bg-red-100 p-1.5 rounded-full text-red-600">
-                        <WarningAmberRoundedIcon sx={{ fontSize: 16 }} />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-slate-800">
-                          Alert: Colombo North
-                        </p>
-                        <p className="text-[10px] text-slate-500">
-                          Predicted Risk: High (89%)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute -left-6 bottom-20 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-xl border border-slate-100 z-30 flex items-center gap-2">
-                    <div className="bg-blue-100 p-1 rounded-full text-blue-600">
-                      <LockRoundedIcon sx={{ fontSize: 12 }} />
-                    </div>
-                    <span className="text-xs font-semibold text-slate-700">
-                      AES-256 Secured
-                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="border-y border-slate-100 bg-white py-8">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { label: "Real-time Heatmaps", icon: MapRoundedIcon },
-                { label: "Trend Prediction", icon: BarChartRoundedIcon },
-                { label: "Detailed Reports", icon: DescriptionRoundedIcon },
-                { label: "Secure Access", icon: LockRoundedIcon },
-              ].map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center justify-center gap-2 text-slate-500"
-                >
-                  <feature.icon
-                    className="text-blue-600"
-                    sx={{ fontSize: 20 }}
-                  />
-                  <span className="text-sm font-semibold">{feature.label}</span>
-                </div>
-              ))}
-            </div>
+      <section className="border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-black py-8">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { label: "Real-time Heatmaps", icon: MapRoundedIcon },
+              { label: "Trend Prediction", icon: BarChartRoundedIcon },
+              { label: "Detailed Reports", icon: DescriptionRoundedIcon },
+              { label: "Secure Access", icon: LockRoundedIcon },
+            ].map((feature, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-center gap-2 text-slate-500 hover:text-blue-600 transition-colors cursor-default"
+              >
+                <feature.icon className="text-blue-600" sx={{ fontSize: 20 }} />
+                <span className="text-sm font-semibold">{feature.label}</span>
+              </div>
+            ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <Drawer
         activeModal={open}
