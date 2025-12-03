@@ -60,13 +60,13 @@ const FeatureOverview = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
             Core Features of SafeLanka
           </h2>
-          <p className="mt-3 text-slate-600 dark:text-muted-300 max-w-2xl mx-auto">
+          <p className="mt-3 text-slate-700 dark:text-muted-200 max-w-2xl mx-auto">
             AI-powered tools designed to support smarter, safer, and data-driven
             policing across Sri Lanka.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {features.map((item, i) => (
             <div
               key={i}
@@ -83,12 +83,12 @@ const FeatureOverview = () => {
                   <item.icon fontSize="large" />
                 </div>
 
-                <h3 className="mt-2 text-base text-muted-900 dark:text-white transition-all duration-300 group-hover:text-white">
+                <h3 className="mt-2 text-base text-muted-900 dark:text-muted-90 transition-all duration-300 group-hover:text-white">
                   {item.label}
                 </h3>
 
                 <p
-                  className="text-sm text-muted-670 dark:text-muted-200 mt-2 leading-snug 
+                  className="text-sm text-muted-670 dark:text-muted-900 mt-2 leading-snug 
                  transition-all duration-300 group-hover:text-white"
                 >
                   {item.description}
