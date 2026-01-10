@@ -16,7 +16,7 @@ const HomePage = () => {
       <Services />
       <HowPredictionWorks />
       <WhoUseSafeLanka />
-      <DataSource />
+      {/* <DataSource /> */}
       <CallToAction />
     </>
   );

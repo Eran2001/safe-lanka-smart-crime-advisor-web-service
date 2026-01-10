@@ -10,7 +10,7 @@ import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 const CallToAction = () => {
   return (
     <section className="relative w-full py-24 px-6 overflow-hidden">
-      <div className="absolute inset-0 bg-white dark:bg-slate-950" />
+      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950" />
 
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/20 blur-[100px] rounded-full" />
       <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full" />
