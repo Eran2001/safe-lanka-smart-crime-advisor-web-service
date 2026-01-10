@@ -13,7 +13,7 @@ const DefaultLayout = () => {
     <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <NavBar />
       <main
-        className={`relative flex-1 pt-28 pb-10 ${
+        className={`relative flex-1 pt-28 ${
           location.pathname === "/" ? "" : "container mx-auto"
         }`}
       >

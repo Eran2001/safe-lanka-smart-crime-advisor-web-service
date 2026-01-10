@@ -15,8 +15,6 @@ import useLockBodyScroll from "@/hooks/useLockBodyScroll";
 
 import Drawer from "@/components/ui/Drawer";
 
-import FeatureOverview from "./FeatureOverview";
-
 const HeroSection = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // useLockBodyScroll(mobileMenuOpen);
@@ -283,9 +281,6 @@ const HeroSection = () => {
           </svg>
         </div>
       </section>
-
-      {/* bottom card */}
-      <FeatureOverview />
 
       <Drawer
         activeModal={mobileMenuOpen}

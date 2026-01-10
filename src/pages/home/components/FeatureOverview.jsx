@@ -1,111 +1,107 @@
 import React from "react";
-
 import MapRoundedIcon from "@mui/icons-material/MapRounded";
 import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
 import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
-
-import Icons from "@/components/ui/Icons";
 import Badge from "@/components/ui/Badge";
 
 const features = [
   {
     label: "AI Heatmap Prediction",
     description:
-      "Shows high-risk, medium-risk, and low-risk zones using ML-based analysis of historical crime patterns.",
+      "High, medium, and low-risk zones using ML-based historical patterns.",
     count: "Live",
     percent: "Active",
-    icon: MapRoundedIcon,
+    icon: <MapRoundedIcon />,
+    color: "from-blue-500 to-cyan-400",
   },
   {
     label: "Crime Trend Forecasting",
     description:
-      "Predicts how crime will increase, decrease, or remain stable using time-series algorithms like LSTM and Linear Regression.",
+      "Predicts stability or growth using LSTM and Linear Regression.",
     count: "95%",
     percent: "Accuracy",
-    icon: BarChartRoundedIcon,
+    icon: <BarChartRoundedIcon />,
+    color: "from-purple-500 to-indigo-400",
   },
   {
     label: "Secure Data Management",
     description:
-      "Encrypted storage for crime records with strict MySQL schemas and role-based access policies.",
+      "Encrypted storage with strict MySQL schemas and access policies.",
     count: "AES-256",
     percent: "Encrypted",
-    icon: LockRoundedIcon,
+    icon: <LockRoundedIcon />,
+    color: "from-slate-700 to-slate-900",
   },
   {
     label: "Role-based Access",
-    description:
-      "Different dashboards for admins, officers, analysts, supervisors, and researchers — each with tailored tools.",
+    description: "Tailored dashboards for admins, officers, and researchers.",
     count: "5 Roles",
     percent: "Access",
-    icon: PeopleAltRoundedIcon,
+    icon: <PeopleAltRoundedIcon />,
+    color: "from-amber-500 to-orange-400",
   },
   {
     label: "Smart Notifications",
     description:
-      "Alerts users when a division becomes high-risk or requires urgent attention.",
+      "Instant alerts when a division requires urgent AI-driven attention.",
     count: "Instant",
     percent: "Alerts",
-    icon: DescriptionRoundedIcon,
+    icon: <DescriptionRoundedIcon />,
+    color: "from-emerald-500 to-teal-400",
   },
 ];
 
 const FeatureOverview = () => {
   return (
-    <section className="py-12 max-lg:mt-28">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
+    <section className="relative py-20 bg-slate-50 dark:bg-slate-950/50 overflow-hidden">
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-black dark:text-white uppercase bg-primary/10 rounded-full">
+            Platform Capabilities
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Core Features of SafeLanka
           </h2>
-          <p className="mt-3 text-slate-700 dark:text-muted-200 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             AI-powered tools designed to support smarter, safer, and data-driven
             policing across Sri Lanka.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {features.map((item, i) => (
             <div
               key={i}
-              className="group p-6 text-center rounded-3xl shadow-xl transition-all duration-300 
-             hover:bg-primary-700 dark:bg-muted-500 dark:hover:bg-muted-700 cursor-pointer
-             flex flex-col h-full justify-between"
+              className="group relative p-8 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col h-full items-center text-center overflow-hidden"
             >
-              <div>
-                <div
-                  className="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-primary-500 
-                 dark:bg-muted-900 text-white transition-all duration-300 
-                 group-hover:bg-white dark:group-hover:text-muted-900 group-hover:text-primary-500"
-                >
-                  <item.icon fontSize="large" />
+              <div
+                className={`absolute inset-0 bg-linear-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+              />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mx-auto h-16 w-16 flex items-center justify-center rounded-4xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 group-hover:scale-110 transition-transform duration-500 mb-6">
+                  {React.cloneElement(item.icon, { sx: { fontSize: 32 } })}
                 </div>
 
-                <h3 className="mt-2 text-base text-muted-900 dark:text-muted-90 transition-all duration-300 group-hover:text-white">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
                   {item.label}
                 </h3>
 
-                <p
-                  className="text-sm text-muted-670 dark:text-muted-900 mt-2 leading-snug 
-                 transition-all duration-300 group-hover:text-white"
-                >
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 grow">
                   {item.description}
                 </p>
 
-                <p className="text-lg font-bold text-muted-900 mt-3 transition-all duration-300 group-hover:text-white">
-                  {item.count}
-                </p>
-              </div>
-
-              <div className="mt-4">
-                <Badge
-                  label={item.percent}
-                  className="inline-block mt-2 text-xs font-medium text-white bg-primary-500 dark:bg-muted-900 
-                 group-hover:bg-white group-hover:text-primary-500 dark:group-hover:text-muted-900 
-                 rounded-xl transition-all duration-300"
-                />
+                <div className="pt-6 border-t border-slate-100 dark:border-slate-800 w-full">
+                  <div className="text-2xl font-black text-slate-900 dark:text-white mb-1">
+                    {item.count}
+                  </div>
+                  <Badge
+                    label={item.percent}
+                    className="inline-block text-[10px] px-3 py-1 font-bold uppercase tracking-wider text-primary-500 bg-primary-500/10 dark:text-white dark:bg-primary-500 rounded-full"
+                  />
+                </div>
               </div>
             </div>
           ))}
