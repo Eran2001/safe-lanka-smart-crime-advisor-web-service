@@ -171,7 +171,7 @@ const GuidePage = () => {
   };
 
   return (
-    <section className="relative w-full py-20 px-6 bg-white dark:bg-slate-900 overflow-hidden">
+    <section className="relative w-full pt-8 pb-20 px-6 bg-white dark:bg-slate-900 overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto space-y-20 relative z-10">
