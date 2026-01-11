@@ -76,13 +76,17 @@ const NavBar = () => {
             <DarkModeToggle />
 
             <button
+              onClick={() => navigate("/login")}
               className="text-black dark:text-white px-4 py-2 text-sm font-medium rounded-lg hover:bg-slate-200
                              dark:hover:bg-muted-200 dark:hover:text-muted-900 transition-all duration-500 group cursor-pointer"
             >
               Login
             </button>
 
-            <button className="group bg-primary-500 hover:bg-primary-700 text-white dark:bg-slate-500 dark:hover:bg-muted-700 px-5 py-2.5 rounded-full text-sm font-semibold shadow-md shadow-primary-700/20 dark:shadow-muted-700/20 transition-all flex items-center gap-1 cursor-pointer">
+            <button
+              onClick={() => navigate("/register")}
+              className="group bg-primary-500 hover:bg-primary-700 text-white dark:bg-slate-500 dark:hover:bg-muted-700 px-5 py-2.5 rounded-full text-sm font-semibold shadow-md shadow-primary-700/20 dark:shadow-muted-700/20 transition-all flex items-center gap-1 cursor-pointer"
+            >
               Register Officer
               <ChevronRightRoundedIcon
                 fontSize="medium"

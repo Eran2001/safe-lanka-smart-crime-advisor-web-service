@@ -2,6 +2,15 @@ import axios from "axios";
 import token from "./utilities";
 import { v4 as uuIdv4 } from "uuid";
 
+const publicHeaders = (contentType = "application/json") => {
+  return {
+    "X-Request-Id": uuIdv4(),
+    "Content-Type": contentType,
+    "Accept-Language": "es-US",
+    Accept: "application/json",
+  };
+};
+
 const defaultHeaders = (contentType = "application/json") => {
   return {
     "X-Request-Id": uuIdv4(),
@@ -19,6 +28,7 @@ const clientOnboarding = axios.create({
 
 const instance = {
   clientOnboarding,
+  publicHeaders,
   defaultHeaders,
 };
 

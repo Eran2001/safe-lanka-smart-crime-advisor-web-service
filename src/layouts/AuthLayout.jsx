@@ -8,7 +8,7 @@ import Loading from "@/components/ui/Loading";
 
 const AuthLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-800">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900">
       <NavBar />
       <main className="flex-1 container mx-auto px-4 py-10">
         <Suspense
